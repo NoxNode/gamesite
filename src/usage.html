@@ -1,0 +1,66 @@
+<html>
+<body>
+	<p>
+		Everything can be done from the <a href="index.html">index.html</a> page on the website or from going to <a href="doaction.php">doaction.php</a> passing in the action and the relevant parameters in the url. Example: <a href="doaction.php?action=register&username=test&password=test">doaction.php?action=register&username=test&password=test</a>
+	</p>
+	<h2>
+		Notes
+	</h2>
+	<ul>
+		<li>setguildmaster doesn't remove username2 from members, if one wants to do that, kick username2 from the guild, then set them as the guildmaster</li>
+		<li>leaving as guildmaster also disbands the guild (kicking everyone from the guild), so if you're the guildmaster and want to leave, but don't want to end the guild, setguildmaster to anyone you want to give the guild to before you leave</li>
+		<li>if one wants to make it so that members of a guild at a certain rank can have guildmaster priviledges, just make a guildmaster user and then give the password of the guildmaster user to users that get to that rank</li>
+	</ul>
+	<h2>
+		Action - Description [parameters]
+	</h2>
+	<h3>
+		Add:
+	</h3>
+	<ul>
+		<li>register - register [username, password]</li>
+		<li>request - request to be friends with username2 [username, password, username2]</li>
+		<li>makeguild - starts a guild as guildmaster [username, password, guildname]</li>
+		<li>invite - invite username2 to guild (only guildmaster can) [username, password, guildname, username2]</li>
+	</ul>
+	<h3>
+		Set:
+	</h3>
+	<ul>
+		<li>setonline - sets a user's online status (0 = offline, 1 = online) [username, password, online]</li>
+		<li>setguildmaster - makes user the guildmaster (only guildmaster can do this) [username, password, guildname, username2]</li>
+		<li>setrank - set the rank of a guild member (must be guildmaster) [username, password, guildname, username2, rank]</li>
+	</ul>
+	<h3>
+		Accept:
+	</h3>
+	<ul>
+		<li>acceptfriend - accept friend request from username2 [username, password, username2]</li>
+		<li>acceptguild - accept guild invite from guildname [username, password, guildname]</li>
+	</ul>
+	<h3>
+		View:
+	</h3>
+	<ul>
+		<li>isonline - checks if a friend is online (must be friends) (0 = offline, 1 = online) [username, password, username2]</li>
+		<li>listfriends - lists the friends of a user [username, password]</li>
+		<li>viewmyrequests - list a user's friend requests to other users [username, password]</li>
+		<li>viewrequests - list a user's friend requests from other users [username, password]</li>
+		<li>viewmemebers - list the ranks of all members of a guild (must be in the guild) [username, password, guildname]</li>
+		<li>viewmyinvites - list the guild invites a user has received [username, password]</li>
+		<li>viewguildsinvites - list the invites a guild has sent out (must be a member of that guild) [username, password, guildname]</li>
+	</ul>
+	<h3>
+		Remove:
+	</h3>
+	<ul>
+		<li>removefriend - removes a friend from a user's friends list [username, password, username2]</li>
+		<li>leave - leave a guild [username, password, guildname]</li>
+		<li>kick - kick a member from a guild (must be guildmaster) [username, password, guildname, username2]</li>
+		<li>declinefriend - removes a friend request from a user [username, password, username2]</li>
+		<li>declineinvite - removes a guild invite from a guild [username, password, guildname]</li>
+		<li>removerequest - removes a friend request sent to a user (must be guildmaster) [username, password, username2]</li>
+		<li>removeinvite - removes a guild invite sent to a user (must be guildmaster) [username, password, guildname, username2]</li>
+	</ul>
+</body>
+</html>

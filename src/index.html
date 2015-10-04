@@ -1,0 +1,263 @@
+<html>
+<body>
+    <a href="usage.html">usage</a>
+    <p>
+        Username: <input type="text" id="iUsername" name="username" size="15"
+            maxlength="100" value="" />
+    </p>
+    <p>
+        Password: <input type="password" id="iPassword" name="password" size="15"
+            maxlength="100" value="" />
+    </p>
+    <p>
+        Online (1 for online or 0 for offline): <input type="number" id="iOnline" name="online" size="15"
+            maxlength="100" value="" />
+    </p>
+    <p>
+        Username2: <input type="text" id="iUsername2" name="username2" size="15"
+            maxlength="100" value="" />
+    </p>
+    <p>
+        Guildname: <input type="text" id="iGuildname" name="guildname" size="15"
+            maxlength="100" value="" />
+    </p>
+    <p>
+        Rank: <input type="text" id="iRank" name="rank" size="15"
+            maxlength="100" value="" />
+    </p>
+    <br>
+    <p>
+        Add:
+        <input type="button" name="register"         value="register"            onclick="register()" />
+        <input type="button" name="request"          value="request"             onclick="request()" />
+        <input type="button" name="makeguild"        value="makeguild"           onclick="makeguild()" />
+        <input type="button" name="invite"           value="invite"              onclick="invite()" />
+    </p>
+    <p>
+        Set:
+        <input type="button" name="setonline"        value="setonline"           onclick="setonline()" />
+        <input type="button" name="setguildmaster"   value="setguildmaster"      onclick="setguildmaster()" />
+        <input type="button" name="setrank"          value="setrank"             onclick="setrank()" />
+    </p>
+    <p>
+        Accept:
+        <input type="button" name="acceptfriend"     value="acceptfriend"        onclick="acceptfriend()" />
+        <input type="button" name="acceptguild"      value="acceptguild"         onclick="acceptguild()" />
+    </p>
+    <p>
+        View:
+        <input type="button" name="isonline"         value="isonline"            onclick="isonline()" />
+        <input type="button" name="listfriends"      value="listfriends"         onclick="listfriends()" />
+        <input type="button" name="viewmyrequests"     value="viewmyrequests"        onclick="viewmyrequests()" />
+        <input type="button" name="viewrequests"       value="viewrequests"          onclick="viewrequests()" />
+        <input type="button" name="viewmembers"        value="viewmembers"           onclick="viewmembers()" />
+        <input type="button" name="viewmyinvites"      value="viewmyinvites"         onclick="viewmyinvites()" />
+        <input type="button" name="viewguildsinvites"  value="viewguildsinvites"     onclick="viewguildsinvites()" />
+    </p>
+    <p>
+        Remove:
+        <input type="button" name="removefriend"     value="removefriend"        onclick="removefriend()" />
+        <input type="button" name="leave"            value="leave"               onclick="leave()" />
+        <input type="button" name="kick"             value="kick"                onclick="kick()" />
+        <input type="button" name="declinefriend"      value="declinefriend"         onclick="declinefriend()" />
+        <input type="button" name="declineinvite"      value="declineinvite"         onclick="declineinvite()" />
+        <input type="button" name="removerequest"      value="removerequest"         onclick="removerequest()" />
+        <input type="button" name="removeinvite"       value="removeinvite"          onclick="removeinvite()" />
+    </p>
+</body>
+<script type="text/javascript">
+
+var element_username = document.getElementById("iUsername");
+var element_password = document.getElementById("iPassword");
+var element_online = document.getElementById("iOnline");
+var element_username2 = document.getElementById("iUsername2");
+var element_guildname = document.getElementById("iGuildname");
+var element_rank = document.getElementById("iRank");
+
+function register() {
+    var username = element_username.value;
+    var password = element_password.value;
+
+    window.location = "doaction.php?action=register&username=" + username + "&password=" + password;
+}
+
+function request() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=request&username=" + username + "&password=" + password + "&username2=" + username2;
+}
+
+function acceptfriend() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=acceptfriend&username=" + username + "&password=" + password + "&username2=" + username2;
+}
+
+function invite() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=invite&username=" + username + "&password=" + password + "&guildname=" + guildname + "&username2=" + username2;
+}
+
+function acceptguild() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+
+    window.location = "doaction.php?action=acceptguild&username=" + username + "&password=" + password + "&guildname=" + guildname;
+}
+
+function listfriends() {
+    var username = element_username.value;
+    var password = element_password.value;
+
+    window.location = "doaction.php?action=listfriends&username=" + username + "&password=" + password;
+}
+
+function isonline() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=isonline&username=" + username + "&password=" + password + "&username2=" + username2;
+}
+
+function setonline() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var online = element_online.value;
+
+    window.location = "doaction.php?action=setonline&username=" + username + "&password=" + password + "&online=" + online;
+}
+
+function removefriend() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=removefriend&username=" + username + "&password=" + password + "&username2=" + username2;
+}
+
+function leave() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+
+    window.location = "doaction.php?action=leave&username=" + username + "&password=" + password + "&guildname=" + guildname;
+}
+
+function kick() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=kick&username=" + username + "&password=" + password + "&guildname=" + guildname + "&username2=" + username2;
+}
+
+function setrank() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+    var username2 = element_username2.value;
+    var rank = element_rank.value;
+
+    window.location = "doaction.php?action=setrank&username=" + username + "&password=" + password + "&guildname=" + guildname + "&username2=" + username2 + "&rank=" + rank;
+}
+
+function makeguild() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+
+    window.location = "doaction.php?action=makeguild&username=" + username + "&password=" + password + "&guildname=" + guildname;
+}
+
+function setguildmaster() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=setguildmaster&username=" + username + "&password=" + password + "&guildname=" + guildname + "&username2=" + username2;
+}
+
+function viewmembers() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+
+    window.location = "doaction.php?action=viewmembers&username=" + username + "&password=" + password + "&guildname=" + guildname;
+}
+
+function viewmyrequests() {
+    var username = element_username.value;
+    var password = element_password.value;
+
+    window.location = "doaction.php?action=viewmyrequests&username=" + username + "&password=" + password;
+}
+
+function viewrequests() {
+    var username = element_username.value;
+    var password = element_password.value;
+
+    window.location = "doaction.php?action=viewrequests&username=" + username + "&password=" + password;
+}
+
+function viewmyinvites() {
+    var username = element_username.value;
+    var password = element_password.value;
+
+    window.location = "doaction.php?action=viewmyinvites&username=" + username + "&password=" + password;
+}
+
+function viewguildsinvites() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+
+    window.location = "doaction.php?action=viewguildsinvites&username=" + username + "&password=" + password + "&guildname=" + guildname;
+}
+
+function declinefriend() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=declinefriend&username=" + username + "&password=" + password + "&username2=" + username2;
+}
+
+function declineinvite() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+
+    window.location = "doaction.php?action=declineinvite&username=" + username + "&password=" + password + "&guildname=" + guildname;
+}
+
+function removerequest() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=removerequest&username=" + username + "&password=" + password + "&username2=" + username2;
+}
+
+function removeinvite() {
+    var username = element_username.value;
+    var password = element_password.value;
+    var guildname = element_guildname.value;
+    var username2 = element_username2.value;
+
+    window.location = "doaction.php?action=removeinvite&username=" + username + "&password=" + password + "&guildname=" + guildname + "&username2=" + username2;
+}
+
+</script>
+</html>
